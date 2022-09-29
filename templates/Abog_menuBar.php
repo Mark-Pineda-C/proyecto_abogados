@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<?PHP
+    
+    session_start();
+    $UserdataRow = explode(',',$_SESSION['DATOSUSER']);
+?>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu desplegable</title>
+    <link rel="stylesheet" href="../resources/css/menu.css">
+    <link rel="stylesheet" href="../static/adminlte.min.css">
+    <script src="https://kit.fontawesome.com/03a89292db.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <input type="hidden" name="username" id="username" value="<?php echo $UserdataRow[1]?>">
+    <nav class="navbar navbar-expand navbar-dark navbar-cyan justify-content-end">
+        <ul class="navbar-nav">
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" id="MainPage" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link" data-toggle="dropdown">Expedientes</a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <a href="#" class="dropdown-item bg-cyan" id="ExpCreatePage">Crear Expedientes</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item bg-cyan" id="ExpListPage">Revisar Expedientes</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item bg-cyan" id="AcrUpload">Agregar Archivos</a>
+                </div>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link" id="ProcPage">Procedimientos</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link" data-toggle="dropdown"><?php echo $UserdataRow[2]?></a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <a href="#" class="dropdown-item bg-cyan" id="CloseSession">Cerrar Sesion</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!--<header class="encabezado">
+        <nav class="menu" id="menu">
+            <ul class="lista">
+                <li class="listItem"><a class="item" href="#" id="MainPage">Inicio</a></li>
+                <li class="listItem">
+                    <a class="item" href="#">Expedientes</a>
+                    <ul class="slide">
+                        <li><a id="ExpCreatePage" href="#">Crear Expedientes</a></li>
+                        <li><a id="ExpListPage" href="#">Revisar Expedientes</a></li>
+                    </ul>
+                </li>
+                <li class="listItem">
+                    <a class="item" href="#" id="ProcPage">Procesos</a>
+                </li>
+                <li class="listItem">
+                    <a class="item" href="#"><?php echo $UserdataRow[2]?></a>
+                    <ul class="slide">
+                        <li><a id="CloseSession" href="#">Cerrar Sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="boton__div">
+            <button id="boton"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>-->
+
+    <div class="container">
+
+    </div>
+    <img src="../resources/img/1.jpg" style="width: 100%;">
+    <img src="../resources/img/2.jpg" style="width: 100%">
+    
+<!--<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAEwDFXatGY&#x2F;view?utm_content=DAEwDFXatGY&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Bienvenido miembro del equipo</a>-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/bootstrap.bundle.min.js"></script>
+    <!--<script src="../resources/js/menu.js"></script>-->
+    <script src="../resources/js/Abog/routingAbog.js"></script>
+</body>
+
+</html>

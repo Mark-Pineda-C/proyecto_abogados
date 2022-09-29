@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p{
+    color: rgb(116, 116, 116);
+}
+
+.encabezado{
+    width: 100%;
+    background: rgb(0, 138, 147);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* --------- */
+
+.lista{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+.item{
+    padding: 20px 30px;
+    color: white;    
+}
+.item:hover{
+    background: rgb(0, 98, 105);
+    border-bottom: solid rgb(221, 221, 221) 1px;
+}
+
+.listItem{
+    position: relative;
+}
+.slide{
+    position: absolute;
+    display: none;
+    top: 33px;
+    background: rgb(114, 204, 211);
+    width: 200px;
+}
+
+.listItem:hover > .slide{
+    display: block;
+}
+.listItem .slide li:hover > ul{
+    display: block;
+}
+.slide li{
+    position: relative;
+}
+.slide ul{
+    position: fixed;
+    right: 200px;
+    top: 0;
+}
+.slide li a{
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+.slide li a:hover{
+    background: rgb(40, 150, 158);
+}
+
+#boton{
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width:850px) {
+    #boton{
+        display: block;
+    }
+    .menu{
+        width: 350px;
+        height: calc(100vh - 60px);
+        background: rgb(0, 138, 147);
+        position: absolute;
+        top: 60px;
+        left: -200%;
+        transition: all 1s;
+        overflow: scroll;
+
+    }
+    .lista{
+        flex-direction: column;
+    }
+    .slide{
+        position: relative;
+        top: 0;
+        display: none;
+        width: 100%;
+    }
+    .slide ul{
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    a{
+        display: block!important;
+        padding: 20px 35px!important;
+    }
+
+    .listItem > .slide li a{
+        margin-left: 20px;
+    }
+    .listItem .slide li > ul li a{
+        margin-left: 40px;
+    }
+    .listItem:hover > .slide{
+        display: none;
+    }
+    .listItem .slide li:hover > ul{
+        display: none;
+    }
+}
+
+@media screen and (max-width:380px) {
+    .menu{
+        width: 100%;
+    }
+}
